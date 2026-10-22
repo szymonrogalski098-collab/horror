@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta name="author" content="Szymon Rogalski">
+<meta name="copyright" content="© 2026 Szymon Rogalski. All rights reserved.">
+<meta charset="utf-8">
+<title>Święta Łucja</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="hud" class="hidden">
+  <div class="corner tl"></div><div class="corner tr"></div>
+  <div class="corner bl"></div><div class="corner br"></div>
+  <div id="rec"><span class="dot">&#9679;</span> REC</div>
+  <div id="timestamp">PAŹ 14 2004&nbsp;&nbsp;03:12:44</div>
+  <div id="mode">SP</div>
+  <div id="cam-battery"><div id="cam-battery-fill"></div></div>
+  <div id="flash-wrap">
+    <div class="label">LATARKA</div>
+    <div id="flash-bar"><div id="flash-fill"></div></div>
+  </div>
+  <div id="stamina"><div id="stamina-fill"></div></div>
+  <div id="crosshair"></div>
+</div>
+<div id="prompt"></div>
+<div id="lock-hint">Kliknij, aby sterować</div>
+<div id="objective"></div>
+<div id="subtitles"></div>
+<div id="hint"><div id="hint-title"></div><div id="hint-body"></div></div>
+<div id="letterbox-top" class="letterbox"></div>
+<div id="letterbox-bottom" class="letterbox"></div>
+<div id="skip-hint"><span id="skip-text">Przytrzymaj SPACJĘ, aby pominąć</span><div id="skip-bar"><div id="skip-fill"></div></div></div>
+<div id="hide-overlay"></div>
+<div id="cards"><div id="card-text"></div></div>
+<div id="tape-overlay">
+  <div id="tape-head">PLAY &#9654;</div>
+  <div id="tape-date"></div>
+  <div id="tape-label">TAŚMA 3</div>
+</div>
+<div id="note-reader">
+  <div class="paper">
+    <div id="note-title"></div>
+    <div id="note-canvas-holder"></div>
+    <div id="note-body"></div>
+    <div class="note-foot">[E] Zamknij</div>
+  </div>
+</div>
+<div id="journal">
+  <div class="journal-box">
+    <h2>DZIENNIK</h2>
+    <div id="journal-objective"></div>
+    <div id="journal-list"></div>
+    <div class="note-foot">Naciśnij numer notatki, aby ją przeczytać &nbsp;|&nbsp; [TAB] / [J] Zamknij</div>
+  </div>
+</div>
+<div id="menu">
+  <div id="menu-main" class="panel">
+    <h1 id="title">ŚWIĘTA ŁUCJA</h1>
+    <div class="subtitle">taśma znaleziona 14.10.2004</div>
+    <button id="btn-continue" class="menu-btn hidden">Kontynuuj</button>
+    <button id="btn-start" class="menu-btn">Zacznij nagranie</button>
+    <button id="btn-start-nointro" class="menu-btn small hidden">Zacznij bez intra</button>
+    <button id="btn-settings" class="menu-btn">Ustawienia</button>
+    <button id="btn-controls" class="menu-btn">Sterowanie</button>
+    <div id="headphones">Graj w słuchawkach. Po ciemku.</div>
+    <div id="photo-warning">Uwaga: gra zawiera migające światła, gwałtowne efekty obrazu i nagłe głośne dźwięki.</div>
+    <div id="boot-error"></div>
+    <div id="copyright">© 2026 Szymon Rogalski · Wszelkie prawa zastrzeżone</div>
+  </div>
+</div>
+<div id="settings-panel" class="overlay-panel">
+  <div class="panel">
+    <h2>USTAWIENIA</h2>
+    <label>Czułość myszy <span id="val-sens"></span>
+      <input type="range" id="set-sens" min="0.2" max="3" step="0.05"></label>
+    <label>Głośność <span id="val-vol"></span>
+      <input type="range" id="set-vol" min="0" max="1" step="0.01"></label>
+    <label>Efekt VHS <span id="val-vhs"></span>
+      <input type="range" id="set-vhs" min="0" max="1" step="0.01"></label>
+    <label>Jasność <span id="val-bright"></span>
+      <input type="range" id="set-bright" min="0.7" max="1.4" step="0.01"></label>
+    <div id="quality-label" class="quality-label">Grafika <span id="val-quality"></span></div>
+    <button id="set-quality" class="menu-btn quality-btn" type="button" aria-describedby="quality-note">◄ ►</button>
+    <div id="quality-note"></div>
+    <button class="menu-btn back-btn">Wróć</button>
+  </div>
+</div>
+<div id="controls-panel" class="overlay-panel">
+  <div class="panel">
+    <h2>STEROWANIE</h2>
+    <table class="controls">
+      <tr><td>W A S D</td><td>ruch</td></tr>
+      <tr><td>Mysz</td><td>rozglądanie się</td></tr>
+      <tr><td>Shift</td><td>bieg (męczy)</td></tr>
+      <tr><td>C</td><td>kucanie (przełącz, ciszej)</td></tr>
+      <tr><td>F</td><td>latarka</td></tr>
+      <tr><td>R</td><td>potrząsanie latarką (gdy gaśnie)</td></tr>
+      <tr><td>E</td><td>użyj / podnieś / schowaj się</td></tr>
+      <tr><td>Tab / J</td><td>dziennik</td></tr>
+      <tr><td>Esc</td><td>pauza</td></tr>
+      <tr><td>Spacja (przytrzymaj)</td><td>pominięcie przerywnika / sceny intra</td></tr>
+      <tr><td>Shift + Spacja</td><td>pominięcie całego intra</td></tr>
+    </table>
+    <button class="menu-btn back-btn">Wróć</button>
+  </div>
+</div>
+<div id="pause">
+  <div class="panel">
+    <h2>PAUZA</h2>
+    <div id="pause-objective"></div>
+    <button id="btn-resume" class="menu-btn">Wróć do nagrania</button>
+    <button id="btn-pause-settings" class="menu-btn">Ustawienia</button>
+    <button id="btn-pause-controls" class="menu-btn">Sterowanie</button>
+    <button id="btn-pause-menu" class="menu-btn">Menu główne</button>
+    <div id="resume-hint"></div>
+  </div>
+</div>
+<div id="death">
+  <div id="death-face"></div>
+  <div id="death-panel">
+    <div class="lost">SYGNAŁ UTRACONY</div>
+    <div class="lost-sub">NO SIGNAL &nbsp; CH 03</div>
+    <div class="lost-info">Wracasz do początku rozdziału.</div>
+    <button id="btn-retry" class="menu-btn">[SPACJA] Przewiń taśmę</button>
+    <button id="btn-death-menu" class="menu-btn">Menu główne</button>
+  </div>
+</div>
+<div id="ending">
+  <div id="ending-text"></div>
+  <div id="credits">
+    <div class="credits-title">ŚWIĘTA ŁUCJA</div>
+    <div id="ending-name"></div>
+    <div class="credits-line">Twórca: Szymon Rogalski</div>
+    <div class="credits-line">Tekstury: ambientCG (CC0) · Dźwięki: OpenGameArt (CC0) i proceduralne</div>
+    <div class="credits-line small">© 2026 Szymon Rogalski. Wszelkie prawa zastrzeżone.</div>
+    <div class="credits-line">Żadna taśma nie ucierpiała. Prawie.</div>
+    <div class="credits-line small" id="notes-found"></div>
+    <button id="btn-ending-menu" class="menu-btn">Menu główne</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  if (!window.THREE) {
+    document.addEventListener('DOMContentLoaded', function () {
+      var e = document.getElementById('boot-error');
+      if (e) e.textContent = 'Nie udało się wczytać Three.js — potrzebne połączenie z internetem przy pierwszym uruchomieniu. Sprawdź połączenie i odśwież stronę.';
+      ['btn-start', 'btn-continue'].forEach(function (id) { var b = document.getElementById(id); if (b) b.disabled = true; });
+    });
+  }
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/texdata.js"></script>
+<script src="js/textures.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/atmos.js"></script>
+<script src="js/sounddata.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/level.js"></script>
+<script src="js/player.js"></script>
+<script src="js/monster.js"></script>
+<script src="js/scares.js"></script>
+<script src="js/story.js"></script>
+<script src="js/archive.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

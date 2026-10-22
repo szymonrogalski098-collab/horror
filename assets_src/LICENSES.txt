@@ -1,0 +1,20 @@
+Downloaded textures used by js/texdata.js
+==========================================
+
+All textures below come from ambientCG (https://ambientcg.com) and are licensed
+under Creative Commons CC0 1.0 Universal (public domain). No attribution required;
+listed here for provenance. Only the Color, NormalGL and Roughness JPEGs were used,
+downscaled/re-encoded (Color 1024px q78, NormalGL 1024px q82, Roughness 512px q75)
+and embedded as base64 data URIs in js/texdata.js.
+
+Game name       ambientCG asset    Source URL                                      License
+--------------  -----------------  ----------------------------------------------  -------
+wallTiles       Tiles133B (1K-JPG) https://ambientcg.com/view?id=Tiles133B          CC0
+wallPlaster     Plaster007 (1K-JPG) https://ambientcg.com/view?id=Plaster007        CC0
+floorLinoleum   Tiles043 (1K-JPG)  https://ambientcg.com/view?id=Tiles043           CC0  (terrazzo tiles)
+floorConcrete   Concrete036 (1K-JPG) https://ambientcg.com/view?id=Concrete036      CC0
+metal           PaintedMetal006 (1K-JPG) https://ambientcg.com/view?id=PaintedMetal006  CC0
+wood            Wood035 (1K-JPG)   https://ambientcg.com/view?id=Wood035            CC0
+
+Download URLs: https://ambientcg.com/get?file=<AssetId>_1K-JPG.zip
+License text: https://creativecommons.org/publicdomain/zero/1.0/

@@ -1,0 +1,41 @@
+Sound sources used by js/sounddata.js
+=====================================
+
+All sounds were downloaded from OpenGameArt.org pages that state the license "CC0" (Creative Commons
+Zero 1.0 Universal, public domain; https://creativecommons.org/publicdomain/zero/1.0/). No attribution
+is required; provenance is listed here anyway. Each source is in its own sub-directory of this folder
+(the *.zip files were extracted in place). Sounds were converted in Chrome (WebAudio decode -> mono ->
+trim / high-pass / fades / loop cross-fade / peak-normalise -> MediaRecorder Opus ~40-48 kbps, WebM
+container) and embedded as base64 in js/sounddata.js. Page author = uploader shown on the page.
+
+Directory / file(s) used                      Source page                                                  Author            License  Game sample names
+--------------------------------------------  -----------------------------------------------------------  ----------------  -------  -----------------
+ambient_horror/ambient_horror_0.ogg           https://opengameart.org/content/ambient-horror               Pixels67          CC0      amb_drone (looped)
+ambience_pack1/The_Depths_of_Hell.mp3         https://opengameart.org/content/ambience-pack-1-sci-fi-horror joth             CC0      amb_depths (looped, 2-40 s)
+dripping_basement/atmosbasement.mp3_.flac     https://opengameart.org/content/dripping-water-loop          qubodup           CC0      amb_basement (looped)
+ghost_moans/.../qubodup-GhostMoan01-05.mp3    https://opengameart.org/content/ghost-monster-voice-moaning-growling  qubodup  CC0      moan_1..5
+ghost_voice_pack/.../output (2,6,9,12).wav    https://opengameart.org/content/ghost-voice-pack             Sorth             CC0      voice_1..4
+creepy_chanting/chant14.wav                   https://opengameart.org/content/creepy-incoherent-chanting   owlishmedia       CC0      voice_5
+creepy_chanting/chant2.wav, chant5.wav        (same page)                                                  owlishmedia       CC0      whisper_1, whisper_2
+horror_scream1/scream_horror1_0.mp3           https://opengameart.org/content/horror-scream1               vinrax            CC0      scream_1 (0.5-8 s)
+scary_ghost/scaryhighpitchedghost_0.ogg       https://opengameart.org/content/scary-high-pitched-ghost     fupi              CC0      scream_4 (1.5-10.5 s)
+creature80/scream_01, scream_02, monster_01,  https://opengameart.org/content/80-cc0-creature-sfx         Chasersgaming     CC0      scream_2, scream_3, roar_1..5,
+  monster_04, monster_07, roar_02, roar_03,   (compilation of CC0 sounds)                                  (compiler)                 growl_1..4, breath_1
+  grunt_01, grunt_03, troll_02, monster_03,
+  breath (all .ogg)
+zombie_noises/zombienoise1.ogg, zombienoise2  https://opengameart.org/content/zombie-noises-and-moans      ianzazz           CC0      breath_2, breath_3
+ghost_breath/ghostbreath.flac                 https://opengameart.org/content/ghost-breath                 Pixel Processor   CC0      breath_4
+horror_sfx/horror_effect1.wav, effect2.wav    https://opengameart.org/content/horror-sfx                   tinyworlds        CC0      stinger_1, stinger_2
+bell_pole/Hitting_The_Metal_BellPole.ogg      https://opengameart.org/content/metal-polelow-bell-hit       hydroque          CC0      stinger_3
+metal_impacts/thud2.wav, thud3.wav, bong1.wav https://opengameart.org/content/metal-impact-sounds         bmaczero          CC0      bang_1, bang_2, bang_3
+metal_wood100/metal_falling_01, _02,          https://opengameart.org/content/100-cc0-metal-and-wood-sfx   rubberduck        CC0      bang_4..8, creak_1..4, door_2
+  metal_slam_01, misc_01, metal_close_01,     (compilation of CC0 sounds)                                  (compiler)
+  wood_squeak_01/02, metal_open_01,
+  metal_spring_01, door_open_01 (.ogg)
+old_elevator_door/old_elevator_door.mp3       https://opengameart.org/content/old-elevator-door            sinny             CC0      door_1
+electric_buzz/buzz_0.ogg                      https://opengameart.org/content/electric-buzz                themightyglider   CC0      buzz (looped)
+(also downloaded, not used: circuit_breaker/Circuit Breaker.zip  https://opengameart.org/content/sfx-circuit-breaker  cleytonkauffman  CC0)
+
+Note: the CC0 license was read from each page text ("CC0"); the OpenGameArt search was filtered to CC0.
+Authors were taken from the page's uploader entry; compilation packs may contain work by several people,
+all released under CC0 by the uploader.
