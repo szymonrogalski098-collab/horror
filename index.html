@@ -64,6 +64,7 @@
     <button id="btn-continue" class="menu-btn hidden">Kontynuuj</button>
     <button id="btn-start" class="menu-btn">Zacznij nagranie</button>
     <button id="btn-start-nointro" class="menu-btn small hidden">Zacznij bez intra</button>
+    <button id="btn-mp" class="menu-btn">Multiplayer</button>
     <button id="btn-settings" class="menu-btn">Ustawienia</button>
     <button id="btn-controls" class="menu-btn">Sterowanie</button>
     <div id="headphones">Graj w słuchawkach. Po ciemku.</div>
@@ -72,6 +73,46 @@
     <div id="copyright">© 2026 Szymon Rogalski · Wszelkie prawa zastrzeżone</div>
   </div>
 </div>
+<div id="mp-panel" class="overlay-panel">
+  <div class="panel">
+    <h2 id="mp-title">MULTIPLAYER (CO-OP)</h2>
+    <label id="mp-nick-label">Twój pseudonim
+      <input type="text" id="mp-nick" maxlength="16" autocomplete="off" spellcheck="false"></label>
+    <button id="btn-mp-create" class="menu-btn">Utwórz pokój</button>
+    <div class="mp-join-row">
+      <input type="text" id="mp-code-in" maxlength="6" autocomplete="off" spellcheck="false" placeholder="KOD">
+      <button id="btn-mp-join" class="menu-btn">Dołącz do pokoju</button>
+    </div>
+    <div id="mp-join-choice" class="mp-choice">
+      <span>Dołączyć jako:</span>
+      <button id="btn-mp-play" class="menu-btn small">Graj</button>
+      <button id="btn-mp-watch" class="menu-btn small">Oglądaj</button>
+    </div>
+    <div id="mp-error" class="mp-error"></div>
+    <button id="btn-mp-back" class="menu-btn back-btn">Wróć</button>
+  </div>
+</div>
+<div id="lobby" class="overlay-panel">
+  <div class="panel">
+    <h2 id="lobby-title">POKÓJ</h2>
+    <div id="lobby-code-label" class="mp-small">Kod pokoju</div>
+    <div class="lobby-code-row"><div id="lobby-code">------</div><button id="btn-lobby-copy" class="menu-btn small">Kopiuj</button></div>
+    <div id="lobby-players"></div>
+    <div id="lobby-specs" class="mp-small"></div>
+    <div id="lobby-msg" class="mp-small"></div>
+    <div id="lobby-mic" class="mp-small"></div>
+    <button id="btn-lobby-mic" class="menu-btn small">Włącz mikrofon</button>
+    <button id="btn-lobby-ready" class="menu-btn">Jestem gotowy</button>
+    <button id="btn-lobby-start" class="menu-btn">Zacznij grę</button>
+    <button id="btn-lobby-start-nointro" class="menu-btn small hidden">Zacznij bez intra</button>
+    <button id="btn-lobby-leave" class="menu-btn small">Opuść pokój</button>
+  </div>
+</div>
+<div id="mp-status"></div>
+<div id="mp-hud" class="hidden"><span id="mp-mic">MIC</span><div id="mp-roster"></div></div>
+<div id="mp-nametag"></div>
+<div id="mp-down"><div id="mp-down-title"></div><div id="mp-down-sub"></div><div id="mp-down-bar"><div id="mp-down-fill"></div></div></div>
+<div id="mp-spectate"></div>
 <div id="settings-panel" class="overlay-panel">
   <div class="panel">
     <h2>USTAWIENIA</h2>
@@ -83,6 +124,7 @@
       <input type="range" id="set-vhs" min="0" max="1" step="0.01"></label>
     <label>Jasność <span id="val-bright"></span>
       <input type="range" id="set-bright" min="0.7" max="1.4" step="0.01"></label>
+    <label class="check-row"><input type="checkbox" id="set-reduce-voices"> <span id="lab-reduce-voices">Mniej głosów (rzadsze jęki i upiorne głosy)</span></label>
     <div id="quality-label" class="quality-label">Grafika <span id="val-quality"></span></div>
     <button id="set-quality" class="menu-btn quality-btn" type="button" aria-describedby="quality-note">◄ ►</button>
     <div id="quality-note"></div>
@@ -98,6 +140,8 @@
       <tr><td>Shift</td><td>bieg (męczy)</td></tr>
       <tr><td>C</td><td>kucanie (przełącz, ciszej)</td></tr>
       <tr><td>F</td><td>latarka</td></tr>
+      <tr><td>Prawy przycisk myszy (przytrzymaj)</td><td>wzmocniona latarka (płoszy potwora, szybko zjada baterię)</td></tr>
+      <tr><td>V</td><td>wyciszenie mikrofonu (multiplayer)</td></tr>
       <tr><td>R</td><td>potrząsanie latarką (gdy gaśnie)</td></tr>
       <tr><td>E</td><td>użyj / podnieś / schowaj się</td></tr>
       <tr><td>Tab / J</td><td>dziennik</td></tr>
@@ -166,6 +210,11 @@
 <script src="js/story.js"></script>
 <script src="js/archive.js"></script>
 <script src="js/intro.js"></script>
+<script src="js/flashboost.js"></script>
+<script src="js/spectator.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/net.js"></script>
+<script src="js/voice.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/main.js"></script>
 </body>
