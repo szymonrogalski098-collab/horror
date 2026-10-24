@@ -36,6 +36,7 @@
 <div id="skip-hint"><span id="skip-text">Przytrzymaj SPACJĘ, aby pominąć</span><div id="skip-bar"><div id="skip-fill"></div></div></div>
 <div id="hide-overlay"></div>
 <div id="cards"><div id="card-text"></div></div>
+<div id="cam-overlay"><div id="cam-label"></div><div class="cam-rec"><span class="dot">&#9679;</span> REC</div><div id="cam-date">PAŹ 14 2004  04:58:12</div></div>
 <div id="tape-overlay">
   <div id="tape-head">PLAY &#9654;</div>
   <div id="tape-date"></div>
@@ -65,6 +66,7 @@
     <button id="btn-start" class="menu-btn">Zacznij nagranie</button>
     <button id="btn-start-nointro" class="menu-btn small hidden">Zacznij bez intra</button>
     <button id="btn-mp" class="menu-btn">Multiplayer</button>
+    <button id="btn-achievements" class="menu-btn">Osiągnięcia</button>
     <button id="btn-settings" class="menu-btn">Ustawienia</button>
     <button id="btn-controls" class="menu-btn">Sterowanie</button>
     <div id="headphones">Graj w słuchawkach. Po ciemku.</div>
@@ -99,6 +101,10 @@
     <div class="lobby-code-row"><div id="lobby-code">------</div><button id="btn-lobby-copy" class="menu-btn small">Kopiuj</button></div>
     <div id="lobby-players"></div>
     <div id="lobby-specs" class="mp-small"></div>
+    <div id="lobby-diff"><div id="lobby-diff-label" class="mp-small">Poziom trudności</div>
+      <button id="btn-lobby-diff" class="menu-btn small quality-btn hidden" type="button">&#9668; Normalny &#9658;</button>
+      <div id="lobby-diff-ro" class="lobby-diff-ro hidden"></div>
+      <div id="lobby-diff-desc" class="mp-small"></div></div>
     <div id="lobby-msg" class="mp-small"></div>
     <div id="lobby-mic" class="mp-small"></div>
     <button id="btn-lobby-mic" class="menu-btn small">Włącz mikrofon</button>
@@ -113,6 +119,21 @@
 <div id="mp-nametag"></div>
 <div id="mp-down"><div id="mp-down-title"></div><div id="mp-down-sub"></div><div id="mp-down-bar"><div id="mp-down-fill"></div></div></div>
 <div id="mp-spectate"></div>
+<div id="diff-panel" class="overlay-panel">
+  <div class="panel">
+    <h2 id="diff-title">POZIOM TRUDNOŚCI</h2>
+    <div id="diff-list"></div>
+    <div id="diff-desc" class="mp-small"></div>
+    <button class="menu-btn back-btn">Wróć</button>
+  </div>
+</div>
+<div id="ach-panel" class="overlay-panel">
+  <div class="panel ach-box">
+    <h2>OSIĄGNIĘCIA</h2>
+    <div id="ach-list"></div>
+    <button class="menu-btn back-btn">Wróć</button>
+  </div>
+</div>
 <div id="settings-panel" class="overlay-panel">
   <div class="panel">
     <h2>USTAWIENIA</h2>
@@ -156,6 +177,7 @@
   <div class="panel">
     <h2>PAUZA</h2>
     <div id="pause-objective"></div>
+    <div id="pause-diff"></div>
     <button id="btn-resume" class="menu-btn">Wróć do nagrania</button>
     <button id="btn-pause-settings" class="menu-btn">Ustawienia</button>
     <button id="btn-pause-controls" class="menu-btn">Sterowanie</button>
@@ -178,6 +200,7 @@
   <div id="credits">
     <div class="credits-title">ŚWIĘTA ŁUCJA</div>
     <div id="ending-name"></div>
+    <div class="credits-line small" id="ending-count"></div>
     <div class="credits-line">Twórca: Szymon Rogalski</div>
     <div class="credits-line">Tekstury: ambientCG (CC0) · Dźwięki: OpenGameArt (CC0) i proceduralne</div>
     <div class="credits-line small">© 2026 Szymon Rogalski. Wszelkie prawa zastrzeżone.</div>
@@ -197,6 +220,7 @@
   }
 </script>
 <script src="js/i18n.js"></script>
+<script src="js/progress.js"></script>
 <script src="js/texdata.js"></script>
 <script src="js/textures.js"></script>
 <script src="js/fx.js"></script>
@@ -204,9 +228,11 @@
 <script src="js/sounddata.js"></script>
 <script src="js/audio.js"></script>
 <script src="js/level.js"></script>
+<script src="js/avatar.js"></script>
 <script src="js/player.js"></script>
 <script src="js/monster.js"></script>
 <script src="js/scares.js"></script>
+<script src="js/puzzles.js"></script>
 <script src="js/story.js"></script>
 <script src="js/archive.js"></script>
 <script src="js/intro.js"></script>
